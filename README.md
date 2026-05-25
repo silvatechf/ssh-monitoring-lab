@@ -1,8 +1,24 @@
-# Veredict Sentinel - SSH Telemetry Monitor
+# Veredict Sentinel - SSH Telemetry Monitor & Mitre Mapping
 
-Este repositorio contiene el **Lab 1** de la plataforma Veredict, enfocado en la monitorización de telemetría nativa de Linux y la detección de ataques de fuerza bruta en servicios críticos (SSH).
+**Veredict Sentinel** es un motor de monitorización de telemetría de seguridad nativa en entornos Linux, especializado en la detección, análisis y triaje en tiempo real de ataques de autenticación por fuerza bruta sobre el protocolo SSH. 
 
-## 🏛️ Conceptos Aplicados y Estándares
-* **Captura de Telemetría Nativa:** Uso del módulo `subprocess` de Python para interactuar con `journalctl` y el demonio de SSH, evitando la lectura pasiva de archivos de texto estáticos.
-* **Mapeo MITRE ATT&CK:** Clasificación formal del incidente bajo la técnica **T1110 (Brute Force)**, asegurando que las alertas generadas sigan los estándares globales de la industria de la ciberseguridad.
-* **Preparación para CTI:** El script actúa como la primera línea de defensa, aislando las direcciones IP atacantes (IoCs) para que puedan ser procesadas por motores de inteligencia automatizados (como el Lab 2 - Veredict CTI Lite).
+Este componente actúa como el **Lab 1** de la arquitectura Veredict, sirviendo como la primera línea de defensa activa (SIEM-ready) que detecta las amenazas en la capa de transporte para aislar Indicadores de Compromiso (IoCs) antes de su escalada en la infraestructura corporativa.
+
+---
+
+## 📊 Evidencia Operacional (Detección en Tiempo Real)
+
+El motor captura los flujos del sistema de forma reactiva y mapea los incidentes bajo taxonomía internacional. Los logs enriquecidos se visualizan con el siguiente formato estructurado:
+
+```plaintext
+======================================================================
+🛡️ MOTOR VEREDICT SENTINEL - MONITORIZACIÓN DE TELEMETRÍA SSH
+🔗 Mapeo de Matriz MITRE ATT&CK: T1110 (Brute Force)
+======================================================================
+[+] Monitor activo. Escuchando eventos de autenticación...
+
+[!] ALERT: Intento de acceso fallido detectado.
+    - IP Origen: 192.168.1.50
+    - Táctica MITRE: Credential Access
+    - Técnica Core: T1110 - Brute Force
+    - Acción SOC recomendada: Extraer IoC e iniciar enriquecimiento CTI.
