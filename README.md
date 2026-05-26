@@ -2,7 +2,7 @@
 
 **SSH Monitoring** es un motor de monitorización de telemetría de seguridad nativa en entornos Linux, especializado en la detección, análisis y triaje en tiempo real de ataques de autenticación por fuerza bruta sobre el protocolo SSH. 
 
-Este componente actúa como el **Lab 1** desta arquitectura, sirviendo como la primera línea de defensa activa (SIEM-ready) que detecta las amenazas en la capa de transporte para aislar Indicadores de Compromiso (IoCs) antes de su escalada en la infraestructura corporativa.
+Este componente actúa sirviendo como la primera línea de defensa activa (SIEM-ready) que detecta las amenazas en la capa de transporte para aislar Indicadores de Compromiso (IoCs) antes de su escalada en la infraestructura corporativa.
 
 ---
 
