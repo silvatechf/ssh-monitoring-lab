@@ -21,7 +21,7 @@ def monitor_ssh_telemetry():
     Captura y analiza los eventos de autenticación SSH en tiempo real utilizando
     herramientas nativas del sistema (journalctl) mediante flujos de subprocess.
     """
-    # Ejecutamos journalctl para leer los logs del servicio SSH en modo continuo (-f)
+    # Se ejecuta journalctl para leer los logs del servicio SSH en modo continuo (-f)
     cmd = ["journalctl", "-u", "ssh", "-f", "-n", "0"]
     
     try:
